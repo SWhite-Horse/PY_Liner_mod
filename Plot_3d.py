@@ -51,11 +51,11 @@ mse_mesh = np.array(mse_sum(w_mesh, b_mesh))  # 注意这里是一个list，所�
 mse_pre, col, row = pre_val(mse_sum(w_mesh, b_mesh))
 w_pre = w_mesh[col][row]
 b_pre = b_mesh[col][row]
-print(w_mesh, b_mesh, mse_mesh)
+print("The best choice is:", "w=", w_pre, "b=",  b_pre, "and the loss is:",  mse_pre)
 
 pic = plt.figure()  # 创建绘图窗口 #
 sub = pic.add_subplot(111, projection='3d')  # 设置3d绘图 #
-sub.plot_surface(w_mesh, b_mesh, mse_mesh)  # 要求使用 array 参数绘图 #
+sub.plot_surface(w_mesh, b_mesh, mse_mesh, rstride=1, cstride=1, cmap=plt.get_cmap('rainbow'))  # 要求使用 array 参数绘图 #
 sub.set_xlabel(r'$w$')   # 标签 #
 sub.set_ylabel(r'$b$')
 sub.set_zlabel(r'$mse$')
