@@ -4,7 +4,7 @@
 # File : Minist.py
 # Software: PyCharm
 import torch
-from torch. utils. data import DataLoader
+from torch.utils.data import DataLoader
 from torchvision import transforms
 from torchvision import datasets
 import torch.nn.functional as F
